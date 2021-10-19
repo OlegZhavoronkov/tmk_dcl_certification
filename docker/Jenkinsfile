@@ -1,0 +1,94 @@
+pipeline {
+    
+    agent {
+        //label 'tmk-serv'
+        docker { 
+                image 'tmk:v2'
+                args '-v /home/jenkins/workspace/stas/dbg_jenkinsfile/build:/build -v /mnt/tmk/testdb:/tmk_data' 
+            }
+    }
+    
+    parameters {
+        gitParameter branchFilter: 'origin/(.*)', defaultValue: 'main', name: 'BRANCH', type: 'PT_BRANCH'
+        choice(
+            name: 'BUILD_TYPE',
+            choices: ['Release', 'RelWithDebInfo', 'Debug'],
+            description: 'Choose build type' )
+    }
+    
+    stages {
+        stage('Build') {
+            steps {
+                echo "Checkout branch: ${params.BRANCH}"
+                git branch: "${params.BRANCH}", credentialsId: '52bb2783-b39e-4656-acda-e5ec03e25d0d', url: 'https://github.com/tmk-org/TMK-DCL2.git'
+                echo 'Building..'
+                sh 'rm -rf build; mkdir build'
+                sh 'mkdir -p build'
+                dir('build') {
+                    sh 'cmake .. -DCMAKE_BUILD_TYPE=${BUILD_TYPE}'
+                    sh 'make -j$(nproc)'
+                }
+            }
+        }
+        stage('Prepare data') {
+            steps {
+                echo 'Create symlink to data..'
+                dir('build') {
+                    //sh 'mkdir -p data'
+                    //sh 'cp /tmk_data/* data'
+                    sh 'ln -s /tmk_data/libdclalgo data'
+                }
+            }
+        }
+        stage('Unit tests for all modules') {
+            parallel {
+                stage('Unit Test libdclalgo') {
+                    steps {
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                            echo 'Testing libdclalgo..'
+                            dir('build/libdclalgo'){
+                                sh 'ctest --verbose'
+                            }
+                        }
+                    }
+                }
+                stage('Unit Test dclcomponents') {
+                    steps {
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                            echo 'Testing dclcomponents..'
+                            dir('build/dclcomponents'){
+                                sh 'ctest --verbose'
+                            }
+                        }
+                    }
+                }
+                stage('Unit Test dclprocessor') {
+                    steps {
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                            echo 'Testing dclprocessor..'
+                            dir('build/dclprocessor'){
+                                sh 'ctest --verbose'
+                            }
+                        }
+                    }
+                }
+                stage('Unit Test libstorage') {
+                    steps {
+                        catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                            echo 'Testing libstorage..'
+                            dir('build/libstorage'){
+                                sh 'ctest --verbose'
+                            }
+                        }
+                    }
+                }
+            }
+                post {
+                    always {
+                        //archiveArtifacts artifacts: 'build/**/*.*', onlyIfSuccessful: true
+                        echo 'Will build deb packages soon..'
+                    }
+            }
+        }
+    }
+}

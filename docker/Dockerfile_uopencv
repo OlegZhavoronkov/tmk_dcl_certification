@@ -1,0 +1,33 @@
+FROM debian:testing
+
+USER root
+
+RUN \
+     echo 'APT::Default-Release "testing";' > /etc/apt/apt.conf.d/80repository \
+     && echo "deb http://deb.debian.org/debian/		testing		main non-free contrib" >  /etc/apt/sources.list \
+     && echo "deb http://deb.debian.org/debian/		testing-updates	main non-free contrib" >> /etc/apt/sources.list \
+     && echo "deb http://deb.debian.org/debian/         unstable        main non-free contrib" >> /etc/apt/sources.list \
+     && echo "deb http://deb.debian.org/debian/         experimental    main non-free contrib" >> /etc/apt/sources.list \
+     && apt-get update \
+     && apt-get install -y tzdata \
+     && apt-get install -y --fix-missing \
+        bash sudo ca-certificates locales-all locales mc vim nano less \
+        apt-utils aptitude numactl procps net-tools cpuinfo \
+        git git-core gnupg python3 python3-kerberos repo \
+        curl wget unzip zip pbzip2 file kmod \
+        build-essential quilt gawk m4 autoconf automake autopoint libtool pkgconf libmpfr-dev \
+        flex bison bc gcc-multilib g++-multilib gperf \
+	net-tools iproute2 numactl procps \
+        libssl-dev zlib1g-dev libpcre++-dev libncurses5-dev \
+    && apt-get install -y --no-install-recommends cmake ccache \
+    && apt-get install -y --fix-missing libgtest-dev googletest googletest-tools \
+    && apt-get install -y --fix-missing libceres-dev \
+    && apt-get install -y --fix-missing --no-install-recommends libopencv-dev \
+    && apt clean \
+    && echo "dash dash/sh boolean false" | debconf-set-selections \
+    && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash \
+    && echo en_US UTF-8 > /etc/locale.gen && locale-gen \
+    && echo export LANG=en_US.UTF-8 > /etc/profile.d/utf8.sh \
+    && chmod +x /etc/profile.d/utf8.sh
+
+CMD [ "/bin/bash" ]

@@ -1,0 +1,23 @@
+{
+  "system": {
+      "name": "mandrel",
+      "database": {
+        "postgresql_host": "localhost",
+        "dbname": "test_db",
+        "user": "tmk",
+        "password": "tmkdb",
+        "channel": "mandrels_channel"
+      },
+      "postgrest": {
+        "postgrest_address": "http://79.173.96.138:5030"
+       },
+      "storage": {
+        "storage_address": "http://79.173.96.139:5080/media/fsdb/"
+      },
+      "winnum": {
+        "winnum_address": "http://online.winnum.io:81",
+        "device": "F93ED274-BF15-4BFC-B8E6-1B906DF98FE3",
+        "key": "93274154861906983"
+      }
+  }
+}

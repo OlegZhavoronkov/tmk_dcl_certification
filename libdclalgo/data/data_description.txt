@@ -1,0 +1,37 @@
+Изображение def1_SPN0.bmp было получено с камеры Lucid.
+def1_SPN0.bmp -- оригинал
+
+def1_SPN0_expand_1.tiff -- изображение после де-мозайки (Использовалась функция expand)
+def1_SPN0_expand_2.tiff -- изображение после де-мозайки (Использовалась функция expand)
+def1_SPN0_expand_3.tiff -- изображение после де-мозайки (Использовалась функция expand)
+def1_SPN0_expand_4.tiff -- изображение после де-мозайки (Использовалась функция expand)
+
+def1_SPN0_expandDebayer_1.tiff -- изображение после де-мозайки (Использовалась функция expandDebayer)
+def1_SPN0_expandDebayer_2.tiff -- изображение после де-мозайки (Использовалась функция expandDebayer)
+def1_SPN0_expandDebayer_3.tiff -- изображение после де-мозайки (Использовалась функция expandDebayer)
+def1_SPN0_expandDebayer_4.tiff -- изображение после де-мозайки (Использовалась функция expandDebayer)
+
+def1_SPN0_expandDebayer_fast_1.tiff -- изображение после де-мозайки (Использовалась функция expandDebayer_fast)
+def1_SPN0_expandDebayer_fast_2.tiff -- изображение после де-мозайки (Использовалась функция expandDebayer_fast)
+def1_SPN0_expandDebayer_fast_3.tiff -- изображение после де-мозайки (Использовалась функция expandDebayer_fast)
+def1_SPN0_expandDebayer_fast_4.tiff -- изображение после де-мозайки (Использовалась функция expandDebayer_fast)
+
+def1_SPN0_expandDebayerWithoutBoundaries_1.tiff -- изображение после де-мозайки (Использовалась функция expandDebayerWithoutBoundaries)
+def1_SPN0_expandDebayerWithoutBoundaries_2.tiff -- изображение после де-мозайки (Использовалась функция expandDebayerWithoutBoundaries)
+def1_SPN0_expandDebayerWithoutBoundaries_3.tiff -- изображение после де-мозайки (Использовалась функция expandDebayerWithoutBoundaries)
+def1_SPN0_expandDebayerWithoutBoundaries_4.tiff -- изображение после де-мозайки (Использовалась функция expandDebayerWithoutBoundaries)
+
+def1_SPN0_expandEasy_1.tiff -- изображение после де-мозайки (Использовалась функция expandEasy)
+def1_SPN0_expandEasy_2.tiff -- изображение после де-мозайки (Использовалась функция expandEasy)
+def1_SPN0_expandEasy_3.tiff -- изображение после де-мозайки (Использовалась функция expandEasy)
+def1_SPN0_expandEasy_4.tiff -- изображение после де-мозайки (Использовалась функция expandEasy)
+
+def1_SPN0_expandLite_1.tiff -- изображение после де-мозайки (Использовалась функция expandLite)
+def1_SPN0_expandLite_2.tiff -- изображение после де-мозайки (Использовалась функция expandLite)
+def1_SPN0_expandLite_3.tiff -- изображение после де-мозайки (Использовалась функция expandLite)
+def1_SPN0_expandLite_4.tiff -- изображение после де-мозайки (Использовалась функция expandLite)
+
+azimuthMap.yml -- карта азимутальных углов
+polarDegreeMap.yml -- карта степеней поляризации
+zenithMapReflectionDiffuse.yml -- карта зенитных углов (использовалась функция zenith_eval с параметром ReflectionDiffuse)
+zenithMapReflectionSpecular.yml -- карта зенитных углов (использовалась функция zenith_eval с параметром ReflectionSpecular)

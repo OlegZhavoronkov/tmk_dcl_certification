@@ -1,0 +1,21 @@
+FROM debian:testing
+
+USER root
+
+RUN \
+    apt-get update && apt-get install -y apt-utils \
+    bash sudo ca-certificates locales-all locales mc vim nano less \
+        aptitude numactl procps net-tools cpuinfo \
+        git git-core gnupg \
+    && apt-get install -y --fix-missing --no-install-recommends cmake ccache  \
+    && apt-get install -y --fix-missing libgtest-dev googletest googletest-tools \
+    && apt-get install -y libgl-dev \
+    && apt-get install -y --fix-missing python3 python3-pip \
+    && python3 -m  pip  install --upgrade pip \
+    && pip3 install imutils opencv-contrib-python pybind11 pytest \
+    && echo "dash dash/sh boolean false" | debconf-set-selections \
+    && DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash \
+    && echo en_US UTF-8 > /etc/locale.gen && locale-gen \
+    && echo export LANG=en_US.UTF-8 > /etc/profile.d/utf8.sh \
+    && chmod +x /etc/profile.d/utf8.sh
+

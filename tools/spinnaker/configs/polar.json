@@ -1,0 +1,29 @@
+{
+  "CamerasList" :
+  {
+    "1" :
+    {
+      "SDK": "spin",
+      "serial": 18434426,
+      "rotate": true,
+      "Properties" :
+      {
+        "PixelFormat" :
+        {
+          "type": "enum",
+          "value": "Mono8"
+        },
+        "ExposureTime" :
+        {
+          "type": "float",
+          "value": 15000
+        }
+      }
+    }
+  },
+  "TriggerList" :
+  {
+
+  }
+}
+

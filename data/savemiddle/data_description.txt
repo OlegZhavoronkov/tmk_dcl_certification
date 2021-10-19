@@ -1,0 +1,12 @@
+Папка с данными для тестов savemiddle. Содержание картинок не важно, можно использовать любые.
+
+./download_foxes.sh скрипт, который качает картинки лис из интернета (те, что ниже)
+
+savemiddle.json -- файл с конфигурацией по умолчанию
+testsave.json -- файл с конфигурацией для тестов
+image.jpeg -- какая-то картинка
+defects/segmap_22_IMG_9964214_crop.jpg -- какая-то картинка
+defects/segmap_34_IMG_9964217_crop.jpg -- какая-то картинка
+defects/segmap_42_IMG_9964219_crop.jpg -- какая-то картинка
+defects/segmap_58_IMG_996424_crop.jpg -- какая-то картинка
+defects/segmap_62_IMG_996425_crop.jpg -- какая-то картинка

@@ -1,0 +1,9 @@
+traced_linear_mnist.pt -- тестовая модель, сделанная из pytorch_model_to_cpp.ipynb
+decoder.pth, encoder.pth -- сама модель, которая по картинке может что-то сказать
+defectmiddle.json -- файл, в котором лежит путь к этой директории (он нигде не используется)
+image.jpeg -- любая картинка из интернета, примерно 320 килобайт
+defects/segmap_22_IMG_9964214_crop.jpg -- тестовый дефект
+defects/segmap_34_IMG_9964217_crop.jpg -- тестовый дефект
+defects/segmap_42_IMG_9964219_crop.jpg -- тестовый дефект
+defects/segmap_58_IMG_996424_crop.jpg -- тестовый дефект
+defects/segmap_62_IMG_996425_crop.jpg -- тестовый дефект

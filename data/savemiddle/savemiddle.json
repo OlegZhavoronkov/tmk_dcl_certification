@@ -1,0 +1,8 @@
+{
+    "sourceN": 1,
+    "saveFormat": "{}_{}",
+    "pathToSave": "../data/savemiddle/",
+    "saveExtension": "tiff",
+    "_comment": "saveFormat can be tiff, ppm (in tests it won't work tho), bmp, jpeg -- choose one"
+}
+

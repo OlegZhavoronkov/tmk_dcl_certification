@@ -1,0 +1,5 @@
+DROP TRIGGER IF EXISTS :triggerName on :tableName;
+CREATE TRIGGER :triggerName
+AFTER INSERT OR UPDATE OR DELETE
+ON :tableName
+FOR EACH ROW EXECUTE PROCEDURE notify_trigger();

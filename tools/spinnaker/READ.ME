@@ -1,0 +1,25 @@
+Obsolete capture software for Point Gray Research / Teledyne FLIR cameras (both USB3 and GigE)
+
+Dependences:
+
+boost
+Qt5
+Spinnaker SDK
+X11
+
+Building:
+
+mkdir build
+cd build
+cmake ..
+make -j8
+
+Applacations:
+
+aqure_demo - example Acquisition.cpp from Spinnake SDK exmples kit transvered  “as is”. Dedicated to test build system and Spinnaker installation.
+
+aqure_images - capture software itself.
+
+decode_flir_frame - RAW images converter.
+
+enum_cams - cameras detector and enumerator.

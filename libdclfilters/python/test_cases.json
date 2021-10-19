@@ -1,0 +1,12 @@
+{
+   "Case1": {
+      "Name": "motion_detector.py",
+      "Input": "-f  /mnt/tmk/testdb/40000",
+      "Output": "SPB0.bmp\nbegin\n"
+   },
+   "Case2": {
+      "Name": "motion_detector.py",
+      "Input": "-f  /mnt/tmk/testdb/20000",
+      "Output": "SPB0.bmp\nbegin\nSPM0.bmp\nend\n"
+   }
+}

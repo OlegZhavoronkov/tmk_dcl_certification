@@ -1,0 +1,75 @@
+{
+  "CamerasList" :
+  {
+    "1" :
+    {
+      "SDK": "spin",
+      "serial": 16387271,
+      "rotate": true,
+      "Properties" :
+      {
+        "LineSelector" :
+        {
+          "type": "enum",
+          "value": "Line3"
+        },
+        "LineMode" :
+        {
+          "type": "enum",
+          "value": "Output"
+        },
+        "LineSource" :
+        {
+          "type": "enum",
+          "value": "ExposureActive"
+        },
+        "PixelFormat" :
+        {
+          "type": "enum",
+          "value": "Mono8"
+        }
+      }
+
+    },
+    "2" :
+    {
+      "SDK": "spin",
+      "serial": 16387291,
+      "rotate": true,
+      "Properties" :
+      {
+        "TriggerMode" :
+        {
+          "type": "enum",
+          "value": "On"
+        },
+        "TriggerSelector" :
+        {
+          "type": "enum",
+          "value": "FrameStart"
+        },
+        "TriggerSource" :
+        {
+          "type": "enum",
+          "value": "Line3"
+        },
+        "TriggerActivation" :
+        {
+          "type": "enum",
+          "value": "FallingEdge"
+        },
+        "PixelFormat" :
+        {
+          "type": "enum",
+          "value": "Mono8"
+        }
+      }
+
+    }
+  },
+  "TriggerList" :
+  {
+
+  }
+}
+
